@@ -14,10 +14,10 @@ print (int(intval1))
 print (int(intval2))
 print (int(intval3)) 
 print (int(floatval1))	   # Note that 2.8 becomes 2
-print (int(floatval2))	   # Note that -4.6 becomes -4
+print (int(floatval2))	   # Note that -4.6 becomes -4 
 print (int(floatval3))
 print (int(strval1))
-#print (int(strval2))	    # Note you will get an error here (-7.8 is a floating-point number)
+#print (int(strval2))	    # Note you will get an error here (-7.8 is set as a string to be converted to an integer, not a floating-point number)
 #print (int(strval3)) 	   # Note you will get an error here (5a is not an integer)
 
 print (float(intval1))
