@@ -30,4 +30,3 @@ while numGuess <= 5:
         break
 else: 
     print("You're out of guesses. The number I was thinking of was {}.".format(randNum))
-#PROBLEM: prompts user for a different guess more than 5 times. Counter doesn't work.
