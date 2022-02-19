@@ -3,15 +3,14 @@
 #hint: copy code from 04.08 & modify so that 'n' varies from A to B
 numA = int(input("Enter A: "))
 numB = int(input("Enter B: "))
-n = 0
-if numA > 1 and numA <= numB:
-    for i in range(numA, numB + 1):
-        if (numA % i == 0):
-            continue   #if not COMPOSITE, must be PRIME
-    else:
-        print(numA) 
-        n += 1  #add one to 'n' counter if PRIME
-        numA += 1   #increment to check new numA
+
+for i in range(numA, numB + 1):
+   if numA > 1:
+       for i in range(2, numB + 1):
+           if (numA % i) == 0:
+               break
+       else:
+           print(numA)
 
 #example inputs of A = 2 and B = 10 generates...
 #   2
