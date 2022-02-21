@@ -1,7 +1,6 @@
 #prompt for a sequence of nums, zero being last
 n = int(input("Enter a Number (zero to quit): "))
 maxNum = 1
-count = 0
 #print max value of the sequence & number of times it occurs
 while n > 0:
     n = int(input("Enter a Number (zero to quit): "))
@@ -9,9 +8,9 @@ while n > 0:
         maxNum = n
         n = int(input("Enter a Number (zero to quit): "))
         if maxNum == n:
-            count += 1
+            i += 1
 print("Maximum: {}".format(maxNum))
-print("Number of Occurrences: {}".format(count))
+print("Number of Occurrences: {}".format(i))
 
 #example sequence: 1, 2, 3, 2, 3, 3, 3, 0
 #max = 3 and num of occurrences = 4

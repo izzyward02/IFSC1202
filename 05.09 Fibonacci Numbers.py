@@ -7,13 +7,12 @@ n = int(input("Enter Fibonacci Sequence Number: "))
 a = 1
 b = 1
 c = 2
-count = 1
-while(count <= n):
-    count += 1
+while(i <= n):
+    i += 1
     a + b
     b = c
     c = a + b
-print("Fibonacci Number: {}".format(count))
+print("Fibonacci Number: {}".format(i))
 #   "Fibonacci Number: "
 
 #example input of sequence index 7 generates Fibonacci number of 13
