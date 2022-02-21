@@ -5,10 +5,13 @@
 #   first, sum values from 1 to 10 (this is total value of cards)
 #   second, read each card (there will be 9) & sum their values
 #   third, subtract the two nums (difference is value of missing card)
+n = int(input("Enter Number of Cards: "))
+firstSum = 0
+secondSum = 0
 
-#   "Enter Number of Cards: "
-#   "Enter Card: " <--prompted num of times equal to num of cards
-#   "Missing Card: " <-- generate value of missing card
+for i in range(1, n + 1):
+    firstSum += i
+for j in range (n - 1):
+    secondSum += int(input("Enter Card: "))
 
-#example num of cards is 5 & the four given cards are 1, 2, 4, 5
-#   missing card = 3
+print("Missing Card: {}".format(firstSum - secondSum))

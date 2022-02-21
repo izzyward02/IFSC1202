@@ -6,10 +6,11 @@ numB = int(input("Enter B: "))
 
 if numA > 1:
     for i in range(2, (numA//2) + 1):
-        if numA % 1 != 0:
-            print(numA)
-    else:
-        break
+        for numA in range(numA, numB + 1):
+            if (numA % i) != 0:
+                print(numA)
+
+
 
 #example inputs of A = 2 and B = 10 generates...
 #   2
