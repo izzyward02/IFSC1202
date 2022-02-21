@@ -7,4 +7,4 @@ factorial = 1
 for num in range(1, num + 1):
     factorial *= num
 #print sum of cubes of 'n' 
-print(factorial)
+print("Factorial: {}".format(factorial))
