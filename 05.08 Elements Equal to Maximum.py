@@ -1,8 +1,17 @@
 #prompt for a sequence of nums, zero being last
-#   "Enter a Number (zero to quit): "   <--prompt x amount of times until user inputs 0
+n = int(input("Enter a Number (zero to quit): "))
+maxNum = 1
+count = 0
 #print max value of the sequence & number of times it occurs
-#   "Maximum: "
-#   "Number of Occurrences: "
+while n > 0:
+    n = int(input("Enter a Number (zero to quit): "))
+    while n > maxNum:
+        maxNum = n
+        n = int(input("Enter a Number (zero to quit): "))
+        if maxNum == n:
+            count += 1
+print("Maximum: {}".format(maxNum))
+print("Number of Occurrences: {}".format(count))
 
 #example sequence: 1, 2, 3, 2, 3, 3, 3, 0
 #max = 3 and num of occurrences = 4

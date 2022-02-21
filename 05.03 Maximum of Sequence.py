@@ -1,4 +1,9 @@
 #prompt for a sequence of nums, last num being zero
-#   "Enter a Number (zero to quit): "   <--prompt x amount of times until user inputs 0
-#print largest value of the num sequence
-#   "Maximum: "
+n = int(input("Enter a Number (zero to quit): "))
+maxNum = n
+
+while n > 0:
+    if n > maxNum:
+        maxNum = n
+    n = int(input("Enter a Number (zero to quit): "))
+print("Maximum: {}".format(maxNum))
