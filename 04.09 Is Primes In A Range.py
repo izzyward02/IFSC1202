@@ -3,11 +3,11 @@
 #hint: copy code from 04.08 & modify so that 'n' varies from A to B
 numA = int(input("Enter A: "))
 numB = int(input("Enter B: "))
-
+n = 0
 if numA > 1:
-    for i in range(2, (numA//2) + 1):
-        for numA in range(numA, numB + 1):
-            if (numA % i) != 0:
+    for n in range(2, (n//2) + 1):
+        for n in range(numA, numB + 1):
+            if (n % i) != 0:
                 print(numA)
 
 
