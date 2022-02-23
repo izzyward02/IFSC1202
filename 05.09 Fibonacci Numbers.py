@@ -4,16 +4,14 @@
 #   i.e., if you're finding the 5th number, it is 3rd + 4th in sequence
 #prompt for an index in the sequence
 n = int(input("Enter Fibonacci Sequence Number: "))
-a = 1
+a = 0
 b = 1
-c = 2
-while(i <= n):
-    i += 1
-    a + b
-    b = c
-    c = a + b
-print("Fibonacci Number: {}".format(i))
-#   "Fibonacci Number: "
+if n == 0:
+    print("Fibonacci Number: 0")
+else:
+    for n in range(2, n + 1):
+        temp = a
+        a = b
+        b += temp
+print("Fibonacci Number: {}".format(b))
 
-#example input of sequence index 7 generates Fibonacci number of 13
-#example input of sequence index 10 generates Fibonacci number of 55
