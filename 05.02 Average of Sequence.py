@@ -11,8 +11,3 @@ if count != 0:
     print("Average: {}".format(avg))
 else:
     print("Sequence Length is 0")
-#print the average of the nums
-#   "Average: " <-- should be a float
-#if no data is entered (only a zero was given), generate an error (division by zero)
-#   if input is zero, print...
-#   "Sequence Length is 0"
