@@ -1,15 +1,17 @@
 #prompt for a sequence of nums, zero being last
-n = int(input("Enter a Number (zero to quit): "))
+maxNum = 0
 i = 0
+firstNum = True
 #print max value of the sequence & number of times it occurs
-while i < n:
-    value = n
-    print (value)
-    exit
-    i += i
-else:
-     print("{} repeats {} times".format(n, i))
-print()
-
-#example sequence: 1, 2, 3, 2, 3, 3, 3, 0
-#max = 3 and num of occurrences = 4
+while True:
+    n = int(input("Enter a Number (zero to quit): "))
+    if n == 0:  
+        break
+    if firstNum or maxNum < n:
+        maxNum = n
+        i = 1
+    elif maxNum == n:
+        i += 1
+    firstNum = False
+print("Maximum: {}".format(maxNum))
+print("Number of Occurrences: {}".format(i))
