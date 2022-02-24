@@ -1,4 +1,7 @@
-#linefeed in Python is specified as \n
-#note that this is BACKSLASH, not forwardslash
+linefeed in Python is specified as \n
+note that this is BACKSLASH, not forwardslash
 
-Hello!\nWelcome to demofile.txt\nThis file is for testing purposes.\nGood Luck!
+Hello!
+Welcome to demofile.txt
+This file is for testing purposes.
+Good Luck!
