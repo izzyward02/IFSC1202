@@ -2,18 +2,30 @@
 
 #program should perform the following:
 #   open & read 06.01 Radius.txt file
+fileTxt = open("06.01 Radius.txt")
+rCircle = fileTxt.read()
 #   define function "diameter"
 #       accept radius (float) as a parameter
-#       calculate & return diameter of circle (d = 2r)
+#       calculate & return diameter of a circle (d = 2r)
+def diameter(rCircle):
+    dCircle = rCircle * 2
+    return dCircle
 #   define function "circumference"
 #       accept radius (float) as a parameter
 #       calculate & return circumference of circle (c = 2(pi)r)
+def circumference(rCicle):
+    cCircle = 2 * 3.14 * rCircle
+    return cCircle
 #   defines function "area"
 #       accept radius (float) as a parameter
 #       calculate & return area of circle (a = pi(r^2))
+def area(rCircle):
+    aCircle = (rCircle * rCircle) * 3.14
+    return aCircle
 #   calculate & print radius, diameter, circumference, and area on a line
 #       each value is 15 characters wide, 5 decimal digits, space separating each column
 #   print headings right-aligned w/ data
+print("Radius:")
 
 #EXPECTED OUTPUT:
 
