@@ -25,8 +25,13 @@ def area(rCircle):
 #   calculate & print radius, diameter, circumference, and area on a line
 #       each value is 15 characters wide, 5 decimal digits, space separating each column
 #   print headings right-aligned w/ data
-print("Radius:")
+print("         Radius" + "       Diameter" + "  Circumference" + "           Area")
+print("        " + rCircle)
+print("        " + dCircle)
+print("" + cCircle)
+print(aCircle)
 
+fileTxt.close()
 #EXPECTED OUTPUT:
 
 #         Radius        Diameter   Circumference            Area
