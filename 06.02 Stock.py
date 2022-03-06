@@ -2,6 +2,7 @@
 
 #program should perform the following:
 #   open & read first line of 06.02 Stock.txt
+fileTxt = 
 #   define function "percentChange"
 #       accept today's stock price (float) & yesterday's stock price (float) as parameters
 #       calculate percent change between yesterday's & today's stock price
