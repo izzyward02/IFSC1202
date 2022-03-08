@@ -1,37 +1,28 @@
 #txt file w/ radius of a circle, one per line (06.01 Radius.txt)
 
-#program should perform the following:
-#   open & read 06.01 Radius.txt file
-fileTxt = open("06.01 Radius.txt")
-rCircle = fileTxt.read()
-#   define function "diameter"
-#       accept radius (float) as a parameter
-#       calculate & return diameter of a circle (d = 2r)
 def diameter(rCircle):
     dCircle = rCircle * 2
     return dCircle
-#   define function "circumference"
-#       accept radius (float) as a parameter
-#       calculate & return circumference of circle (c = 2(pi)r)
 def circumference(rCicle):
-    cCircle = 2 * 3.14 * rCircle
+    cCircle = rCircle * 3.14 * 2
     return cCircle
-#   defines function "area"
-#       accept radius (float) as a parameter
-#       calculate & return area of circle (a = pi(r^2))
 def area(rCircle):
-    aCircle = (rCircle * rCircle) * 3.14
+    aCircle = rCircle * rCircle * 3.14
     return aCircle
+#   open & read 06.01 Radius.txt file
 #   calculate & print radius, diameter, circumference, and area on a line
 #       each value is 15 characters wide, 5 decimal digits, space separating each column
 #   print headings right-aligned w/ data
-print("         Radius" + "       Diameter" + "  Circumference" + "           Area")
-print("        " + rCircle)
-print("        " + dCircle)
-print("" + cCircle)
-print(aCircle)
+print("{:>15s} {:>15s} {:>15s} {:>15s}".format("Radius", "Diameter", "Circumference", "Area"))
+fileTxt = open("06.01 Radius.txt")
 
+rCircle = fileTxt.readline()
+while rCircle != "":
+    dataOut = rCircle
+    print("{:15.5f} {:15.5f} {:15.5f} {:15.5f}".format(dataOut,diameter(dataOut),circumference(dataOut),area(dataOut)))
+    rCircle = fileTxt.readline()
 fileTxt.close()
+
 #EXPECTED OUTPUT:
 
 #         Radius        Diameter   Circumference            Area
