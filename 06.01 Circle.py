@@ -14,12 +14,13 @@ def area(radius):
     return aCircle
 
 fileTxt = open("06.01 Radius.txt")
-rCircle = fileTxt.readline()
+circlefile = fileTxt.read()
 print("{:>15s} {:>15s} {:>15s} {:>15s}".format("Radius", "Diameter", "Circumference", "Area"))
-while rCircle != "":
-    rCirclefp = float(radius)
+circlefile = fileTxt.readline()
+while circlefile != " ":
+    rCirclefp = float(x)
     print("{:15.5f} {:15.5f} {:15.5f} {:15.5f}".format(rCirclefp, diameter(rCirclefp), circumference(rCirclefp), area(rCirclefp)))
-    radius = circlefile.readline()
+    circlefile = fileTxt.readline()
 fileTxt.close()
 #   open & read 06.01 Radius.txt file
 #   calculate & print radius, diameter, circumference, and area on a line
