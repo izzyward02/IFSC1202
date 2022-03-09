@@ -45,7 +45,7 @@ print(len(s))   #OUTPUT: 31
 #       if first paramter is omitted, then Python takes slice from beginning of string
 #       to remove last character from string, use slice S[:-1]. Slice S[:] matches string S itself
 
-#   subsequence: a slice with three parameters S[a:b:c]
+#   subsequence: a slice with three parameters S[a:\b:d]
 #       the third parameter specifies the step, same as for function range()
 #       only characters w/ following index are taken: a, a+d, a+2*d, etc until and not including character with index b
 #       if third parameter ==2, slice takes every second character
