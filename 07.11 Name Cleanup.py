@@ -21,7 +21,7 @@
 #       and call properCase() function
 #create "middleName"
 #   returns the middle name of string "s"
-#   hint: find first space in "s" and last space in "s" using find()
+#   hint: find first space in "s" using find() and last space in "s" using rfind()
 #       and create a substring from first space to last space in "s"
 #       call trim() function and properCase() function
 #       and if the length of middleName is 1, append a period
