@@ -1,32 +1,30 @@
 #txt file w/ radius of a circle, one per line (06.01 Radius.txt)
-from math import pi
+fileTxt = open("06.01 Radius.txt")
+x = fileTxt.readline()
+print("{:>15s} {:>15s} {:>15s} {:>15s}".format("Radius", "Diameter", "Circumference", "Area"))
 
 def radius(radius):
-    radius = x
+    x = fileTxt.readline()
+    return x
 def diameter(radius):
-    dCircle = rCircle * 2
-    return dCircle
+    diameter = x * 2
+    return diameter
 def circumference(radius):
-    cCircle = 2 * radius * pi
-    return cCircle
+    circumference = 2 * x * 3.14
+    return circumference
 def area(radius):
-    aCircle = pi * radius * radius
-    return aCircle
+    area = 3.14 * x * x
+    return area
 
-fileTxt = open("06.01 Radius.txt")
-circlefile = fileTxt.read()
-print("{:>15s} {:>15s} {:>15s} {:>15s}".format("Radius", "Diameter", "Circumference", "Area"))
-circlefile = fileTxt.readline()
-while circlefile != " ":
-    rCirclefp = float(x)
-    print("{:15.5f} {:15.5f} {:15.5f} {:15.5f}".format(rCirclefp, diameter(rCirclefp), circumference(rCirclefp), area(rCirclefp)))
-    circlefile = fileTxt.readline()
+while x != " ":
+    x = float(x)
+    diameter = x * 2
+    circumference = 2 * 3.14 * x
+    area = 3.14 * x * x
+    print("{:15.5f} {:15.5f} {:15.5f} {:15.5f}".format(x, diameter, circumference, area))
+    x = fileTxt.readline()
+
 fileTxt.close()
-#   open & read 06.01 Radius.txt file
-#   calculate & print radius, diameter, circumference, and area on a line
-#       each value is 15 characters wide, 5 decimal digits, space separating each column
-#   print headings right-aligned w/ data
-
 #EXPECTED OUTPUT:
 
 #         Radius        Diameter   Circumference            Area
