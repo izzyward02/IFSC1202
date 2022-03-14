@@ -1,6 +1,9 @@
 #prompt for a string
+s = input("Enter a string: ")
 #   line 1: print third character
+print(s[2])
 #   line 2: print second to last character
+print(s[-2])
 #   line 3: print first five characters
 #   line 4: print all but last two characters
 #   line 5: print all characters with even indicies (index starts @ 0)
