@@ -11,12 +11,13 @@ iRead = iFileTxt.readline()
 read = 0
 written = 0
 
-while iRead != " ":
+while iRead != " ":     #OVERALL WON'T RUN
     read += 1
+    iRead = iFileTxt.readline()
     if iRead != "\n":
         oFileTxt.write(iRead)
         written += 1
-    iRead = iFileTxt.readline()
+        iRead = iFileTxt.readline()
 #   print num of lines read & num of lines written
 print("{} Records Read".format(r))
 print("{} Records Written".format(w))

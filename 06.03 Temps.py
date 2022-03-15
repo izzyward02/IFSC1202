@@ -2,8 +2,8 @@
 fFileTxt = open("06.03 FTemps.txt", "r")
 cFileTxt = open("06.03 CTemps.txt", "w")
 
-count = 0
 fTemp = fFileTxt.readline()
+count = 0
 #program should perform the following:
 #   opens file "06.03 FTemps.txt" for reading
 #   opens file "06.03 CTemps.txt" for writing
@@ -16,7 +16,7 @@ def FahrToCel(fTemp):
 #   reads a line from "06.03 FTemps.txt"
 #   calculates the Celsius temperature
 while fTemp != " ":
-    fTemp = float(fTemp)
+    fTemp = (fTemp - 32) * (5 / 9)  #PROBLEM IS HERE: unsupported opperand type(s) 'str' and 'int'
     count += 1
     out = FahrToCel(fTemp)
     out = round(out, 1)
