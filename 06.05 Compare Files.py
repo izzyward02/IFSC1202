@@ -10,7 +10,6 @@ aRead = fileTxtA.readline()
 bRead = fileTxtB.readline()
 lineNum = 1
 diff = 0
-same = True
 
 while aRead != bRead:       #OVERALL WILL NOT RUN
     print("Line: {} - File A: {}".format(lineNum, aRead))
@@ -24,7 +23,10 @@ else:
     aRead = fileTxt.readline()
     bRead = fileTxt.readline()
 #   print num of differences
+fileTxtA.close()
+fileTxtB.close()
 
+print("{} Differences".format(diff))
 #EXPECTED OUTPUT:
 
 #Line: 4 - File A: jumpsx  

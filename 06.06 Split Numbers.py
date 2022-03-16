@@ -1,23 +1,76 @@
 #four txt files: display a count of nums in each
-
+fileTxtN = open("06.06 Numbers.txt", "r")
+fileTxtE = open("06.06 EvenNumbers.txt", "w")
+fileTxtO = open("06.06 OddNumbers.txt", "w")
+fileTxtP = open("06.06 PrimeNumbers.txt", "w")
 #program should perform the following:
 #   opens "06.06 Numbers.txt" file for input containing ints, one per line
 #   opens "06.06 EvenNumbers.txt" file for output that will contain even numbers
 #   opens "06.06 OddNumbers.txt" file for output that will contain odd numbers
 #   opens "06.06 PrimeNumbers.txt" file for output that will contain prime numbers
+num = int(fileTxtN.readline())
+countE = 0
+countO = 0
+countP = 0
+totalRead = 0
 #   creates function "isEven"
 #       accepts an int & returns True if even & False if odd
+def isEven(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
 #   creates function "isOdd"
 #       accepts an int & returns True if odd & False if even
+def isOdd(num):
+    if num % 2 != 0:
+        return True
+    else:
+        return False 
 #   creates function "isPrime"
 #       accepts an int & returns True if prime & false if composite
 #       prime nums are greater than 1
+def isPrime(num):
+    if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                return False
+                break
+            else:
+                return True 
 #   reads each line of "06.06 Numbers.txt" & converts to an int
 #   uses "isEven" & writes even ints to "06.06 EvenNumbers.txt" (one int per line)
 #   uses "isOdd" & writes odd ints to "06.06 OddNumbers.txt" (one int per line)
 #   uses "isPrime" & writes prime ints to "06.06 PrimeNumbers.txt" (one int per line)
+while num != " ":
+    if isEven == True:
+        move = fileTxtE.write(num)
+        num = fileTxtN.readline()
+        countE += 1
+        totalRead += 1
+    elif isOdd == True:
+        move = fileTxtO.write(num)
+        num = fileTxtN.readline()
+        countO += 1
+        totalRead += 1
+    elif isPrime == True:
+        move = fileTxtP.write(num)
+        num = fileTxtN.readline()
+        countP += 1
+        totalRead += 1
+    else:
+        num = fileTxtN.readline()
+        totalRead += 1
 #   closes all files when finished
+fileTxtN.close()
+fileTxtE.close()
+fileTxtO.close()
+fileTxtP.close()
 #   displays a count of nums in each txt file
+print("{} even numbers".format(countE))
+print("{} odd numbers".format(countO))
+print("{} prime numbers".format(countP))
+print("{} numbers read".format(totalRead))
 
 #EXPECTED OUTPUT:
 
