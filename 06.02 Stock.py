@@ -28,12 +28,3 @@ while tStock != " ":
 #   read next line of input
 #   calculate & print stock value & percent change from yesterday 
 #       each column is 10 characters wide w/ space between
-
-#EXPECTED OUTPUT:
-
-#     Price      Change
-#    126.18
-#    125.60      -0.46%
-#    125.01      -0.47%
-#    127.74       2.18%
-#    129.04       1.02%
