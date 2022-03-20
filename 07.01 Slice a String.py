@@ -5,24 +5,16 @@ print(s[2])
 #   line 2: print second to last character
 print(s[-2])
 #   line 3: print first five characters
+print(s[:5])
 #   line 4: print all but last two characters
+print(s[:-2])
 #   line 5: print all characters with even indicies (index starts @ 0)
+print(s[::2])
 #   line 6: print all characters with odd indicies
+print(s[1::2])
 #   line 7: print all characters in reverse order
+print(s[::-1])
 #   line 8: print every second character in reverse order, starting with last being 0
+print(s[::-2])
 #   line 9: print length of given string
-
-#dont use loops
-
-#EXAMPLE OUTPUT:
-
-#Enter a string: Good Morning
-#o
-#n
-#Good 
-#Good Morni
-#Go onn
-#odMrig
-#gninroM dooG
-#girMdo
-#12
+print(len(s))

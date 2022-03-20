@@ -4,7 +4,3 @@ s = input("Enter a string: ")
 #hint: count num of spaces
 words = s.count(" ") + 1
 print("{} words".format(words))
-#EXAMPLE OUTPUT:
-
-#Enter a string: How are you doing?
-#4 words
