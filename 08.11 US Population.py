@@ -15,7 +15,7 @@ txtLine = inFile.readline()
 #       change from previous year
 #       percent change in population over last year (change in pop / previous year pop) * 100
 while txtLine != " ":
-    popNum = int(txtLine)
+    popNum = txtLine
     popNum *= 1000
     popList.append(popNum)
     txtLine = inFile.readline()
