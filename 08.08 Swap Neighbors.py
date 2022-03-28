@@ -5,6 +5,15 @@
 #   if list has an odd nuym of elements, leave last element in place
 #don't use list or string functions or methods (except .split() method)
 #don't use "for x in y" iterator; use "for x in range(n)"
+for i in range(1, len(a), 2):
+    temp = a[i]
+    a[i] = a[i - 1]
+    a[i - 1] = temp
+print("Swapped Values: ", end="")
+
+for i in range(len(a)):
+    print(a[i], sep=" ", end=" ")
+#CHECK TO SEE IF DONE
 
 #EXAMPLE OUPUT:
 

@@ -1,13 +1,10 @@
 #prompt for a string containing ints separated by spaces
+x = input("Enter Values Separated by Spaces: ")
 #load values into a list
+a = x.split()
 #print values that are odd
 #don't use list or string functions or methods (except .split() method)
 #don't use the "for x in y" iterator; use "for x in range(n)"
-
-#EXAMPLE OUTPUT:
-
-#Enter Values Separated by Spaces: 1 20 30 3 40 50 9 11
-#1
-#3
-#9
-#11
+for i in range(len(a)):
+    if int(a[i]) %  2 == 1:
+        print(a[i])
