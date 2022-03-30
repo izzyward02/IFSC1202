@@ -5,7 +5,7 @@ inFileTxt = "CarSales.txt"
 inFile = open(inFileTxt, "r")
 txtLine = inFile.readline()
 #split car make and sales price w/ comma
-values = txtLine.split(",", 1)
+values = txtLine.split(",", 1)      
 #append car make and sales price to a list; NOTE: zeroth column will be car make and first column is price sold
 carList = []
 allTotalCars = 0
@@ -16,7 +16,7 @@ makePriceAvg = 0.0
 #loop through list, calculate, and print
 #   total num all cars (dont use function)
 #   avg sale price of all cars (dont use function)
-while txtLine != " ":
+while txtLine != "":
     values = txtLine
     carList.append(values)
     allTotalCars += 1
@@ -24,14 +24,14 @@ while txtLine != " ":
     allPriceAvg = price / allTotalCars
     txtLine = inFile.readline()
 inFile.close()
-
+#print header line w/ overall data
 print("{} Total Cars - Average Price: ${}".format(allTotalCars, allPriceAvg))
 #prompt user for car make and convert to propercase
 user = input("Enter Car Make: ")
 #search zeroth column of list for car make entered (dont use list methods-manually perform search)
 #   if car make is found, keep running total of sale price and count of cars found to calc an avg
 #   if name not found, print "Car Make Not Found"
-if user in values[make]:
+if user in values[0]:
     def properCase(user):
         return user[0:1].upper() + user[1].lower()
     print("Enter Car Make: {}".format(user))
