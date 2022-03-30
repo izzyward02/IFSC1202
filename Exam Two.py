@@ -5,9 +5,9 @@ inFileTxt = "CarSales.txt"
 inFile = open(inFileTxt, "r")
 txtLine = inFile.readline()
 #split car make and sales price w/ comma
-values = txtLine.split()
+values = txtLine.split(",", 1)
 #append car make and sales price to a list; NOTE: zeroth column will be car make and first column is price sold
-carList = [make, price]
+carList = []
 allTotalCars = 0
 price = 0.0
 allPriceAvg = 0.0
@@ -18,7 +18,7 @@ makePriceAvg = 0.0
 #   avg sale price of all cars (dont use function)
 while txtLine != " ":
     values = txtLine
-    carList.append(make, price)
+    carList.append(values)
     allTotalCars += 1
     price += price
     allPriceAvg = price / allTotalCars
