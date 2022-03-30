@@ -13,6 +13,7 @@ price = 0.0
 allPriceAvg = 0.0
 makeTotalCars = 0
 makePriceAvg = 0.0
+percentPrice = 0.0
 #loop through list, calculate, and print
 #   total num all cars (dont use function)
 #   avg sale price of all cars (dont use function)
