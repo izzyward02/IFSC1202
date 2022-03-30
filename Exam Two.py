@@ -9,7 +9,7 @@ values = txtLine.split()
 #append car make and sales price to a list; NOTE: zeroth column will be car make and first column is price sold
 carList = []
 allTotalCars = 0
-price = values[1]
+price = 0.0
 allPriceAvg = 0.0
 makeTotalCars = 0
 makePriceAvg = 0.0
