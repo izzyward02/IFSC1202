@@ -1,21 +1,49 @@
 #create program that performs the following unit conversions:
 #   prompt for float (FromValue)
-#   prompt "Enter From Value: "
+fromValue = float(input("Enter From Value: "))
 #   prompt for unit conversion (FromUnit)
-#   prompt "Enter From Unit (mm, cm, m, km, in, yd, mi): "
+fromUnit = input("Enter From Unit (mm, cm, m, km, in, yd, mi): ")
 #   prompt unit to convert to (ToUnit)
-#   prompt "Enter To Unit (mm, cm, m, km, in, yd, mi): "
+toUnit = input("Enter To Unit (mm, cm, m, km, in, yd, mi): ")
 #   open "09.04 Conversion.txt" & read into two dimensional list
+convTxtFile = open("09.04 Conversion.txt", "r")
+read = convTxtFile.readline()
+convList = []
+row = 0
+col = 0
 #       first row contains names of valid ToUnit
 #       first column contains names of valid FromUnit
+while read != "":
+    split = read.split(" ")
+    convList.append(split)
+    read = convTxtFile.readline()
+convTxtFile.close()
 #   use FOR loop to search for match between entered FromUnit and first column
 #       save index of row that match is found
+for b in range(1, len(convList)):
+    for c in range(1, len(convList[b])):
+        if convList[b][0] == fromUnit:
+            row = b
 #   if no match for FromUnit, print "FromUnit is not valid" & exit program
+if row == 0:
+    print("FromUnit is not valid")
+    exit()
 #   use FOR loop to search for match between entered ToUnit and first row
 #       save index of column that match is found
+for b in range(1, len(convList)):
+    for c in range(1, len(convList[b])):
+        if convList[0][c] == toUnit:
+            col = c
 #   if no match for ToUnit, print "ToUnit is not valid" & exit program
+if col == 0:
+    print("ToUnit is not valid")
+    exit()
 #   use index to get multiplier from 2D list
 #       multiply it by FromValue, round 7 digits, display results
+toValue = fromValue * float(convList[b][c])
+toValue = round(toValue, 7)
+
+print("{} {} => {} {}".format(fromValue, fromUnit, toValue, toUnit))
 
 #EXAMPLE OUTPUT:
 
