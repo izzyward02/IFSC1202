@@ -8,7 +8,6 @@ fileTxtP = open("06.06 PrimeNumbers.txt", "w")
 #   opens "06.06 EvenNumbers.txt" file for output that will contain even numbers
 #   opens "06.06 OddNumbers.txt" file for output that will contain odd numbers
 #   opens "06.06 PrimeNumbers.txt" file for output that will contain prime numbers
-num = int(fileTxtN.readline())
 countE = 0
 countO = 0
 countP = 0
@@ -16,51 +15,38 @@ totalRead = 0
 #   creates function "isEven"
 #       accepts an int & returns True if even & False if odd
 def isEven(num):
-    if num % 2 == 0:
-        return True
-    else:
-        return False
+    return num % 2 == 0
 #   creates function "isOdd"
 #       accepts an int & returns True if odd & False if even
 def isOdd(num):
-    if num % 2 != 0:
-        return True
-    else:
-        return False 
+    return num % 2 == 1
 #   creates function "isPrime"
 #       accepts an int & returns True if prime & false if composite
 #       prime nums are greater than 1
 def isPrime(num):
     if num > 1:
-        for i in range(2, num):
-            if (num % i) == 0:
+        for i in range(2, num // 2):
+            if num % i == 0:
                 return False
-                break
-            else:
-                return True 
+        return True
+    else:
+        return False 
 #   reads each line of "06.06 Numbers.txt" & converts to an int
 #   uses "isEven" & writes even ints to "06.06 EvenNumbers.txt" (one int per line)
 #   uses "isOdd" & writes odd ints to "06.06 OddNumbers.txt" (one int per line)
 #   uses "isPrime" & writes prime ints to "06.06 PrimeNumbers.txt" (one int per line)
-while num != " ":
-    if isEven == True:
-        move = fileTxtE.write(num)
-        num = fileTxtN.readline()
+for line in fileTxtN:
+    line = int(line.strip())
+    if isEven(line):
+        fileTxtE.write(str(line) + "\n")
         countE += 1
-        totalRead += 1
-    elif isOdd == True:
-        move = fileTxtO.write(num)
-        num = fileTxtN.readline()
+    elif isOdd(line):
+        fileTxtO.write(str(line) + "\n")
         countO += 1
-        totalRead += 1
-    elif isPrime == True:
-        move = fileTxtP.write(num)
-        num = fileTxtN.readline()
+    if isPrime(line):
+        fileTxtP.write(str(line) + "\n")
         countP += 1
-        totalRead += 1
-    else:
-        num = fileTxtN.readline()
-        totalRead += 1
+    totalRead += 1
 #   closes all files when finished
 fileTxtN.close()
 fileTxtE.close()
