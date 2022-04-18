@@ -11,29 +11,29 @@ class RetailItem():
         self.UnitsOnHand = UnitsOnHand
         self.Price = Price
 #create method InventoryValue that returns UnitsOnHand times Price
-    def InventoryValue(self, UnitsOnHand, Price):
+    def InventoryValue(self):
         InventoryValue = self.UnitsOnHand * self.Price
-        return InventoryValue
+        return InventoryValue                           #FIGURE OUT HOW TO ADD THIS TO THE LIST
 #read 10.02 Inventory.txt file & create three objects, one per item
 fileTxt = open("10.02 Inventory.txt", "r")
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
-item1 = RetailItem(itemElement[0], itemElement[1], itemElement[2], InventoryValue)  #CALL LAST PARAMETER SEPARATELY FOR EACH INSTANCE
+item1 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
-item2 = RetailItem(itemElement[0], itemElement[1], itemElement[2], InventoryValue)
+item2 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
-item3 = RetailItem(itemElement[0], itemElement[1], itemElement[2], InventoryValue)
+item3 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
 #display report w/ Description, UnitsOnHand, Price, and InventoryValue
-print("{:<8}{:<8}{:<8}{:<8}".format("Description", "Units On Hand", "Price", "Inventory"))
+print("{:<20}{:<20}{:<20}".format("Description", "Units On Hand", "Price"))
 
-print("{:<8}{:<8}{:<8}{:<8}".format(item1.Description, item1.UnitsOnHand, item1.Price, item1.InventoryValue))
-print("{:<8}{:<8}{:<8}{:<8}".format(item2.Description, item2.UnitsOnHand, item2.Price, item2.InventoryValue))
-print("{:<8}{:<8}{:<8}{:<8}".format(item3.Description, item3.UnitsOnHand, item3.Price, item3.InventoryValue))
+print("{:<20}{:<20}{:<15}".format(item1.Description, item1.UnitsOnHand, item1.Price))
+print("{:<20}{:<20}{:<15}".format(item2.Description, item2.UnitsOnHand, item2.Price))
+print("{:<20}{:<20}{:<15}".format(item3.Description, item3.UnitsOnHand, item3.Price))
 
 #EXAMPLE OUTPUT:
 
