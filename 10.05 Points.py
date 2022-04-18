@@ -9,7 +9,7 @@ class Point:
         self.x = Xvalue
         self.y = Yvalue
 # Step 4 - Define the methods for the object
-# ToString returns a nicely formated string to represent the data point
+#   ToString returns a nicely formated string to represent the data point
     def ToString(self):
         return "(" + str(self.x) + ", " + str(self.y) + ")"
 #create following functions to make calcs about datapoints:
