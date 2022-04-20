@@ -21,8 +21,8 @@ fileRead = petTxt.readline()
 petElement = fileRead.split(",")
 furball3 = Pet(petElement[0], petElement[1], petElement[2])
 #   print object attributes for pets using .format() method
-print("{:<8}{:<8}{:<8}".format("Name", "Type", "Age"))
+print("{:8s}{:8s}{:8s}".format("Name", "Type", "Age"))
 #print Name, Type, Age attributes from each pet object
-print("{:<8}{:<8}{:<8}".format(furball1.Name, furball1.Type, furball1.Age))
-print("{:<8}{:<8}{:<8}".format(furball2.Name, furball2.Type, furball2.Age))
-print("{:<8}{:<8}{:<8}".format(furball3.Name, furball3.Type, furball3.Age))
+print("{:8s}{:8s}{:8s}".format(furball1.Name, furball1.Type, furball1.Age))
+print("{:8s}{:8s}{:8s}".format(furball2.Name, furball2.Type, furball2.Age))
+print("{:8s}{:8s}{:8s}".format(furball3.Name, furball3.Type, furball3.Age))

@@ -10,16 +10,18 @@ class RetailItem():
         self.Description = Description
         self.UnitsOnHand = UnitsOnHand
         self.Price = Price
+        self.InventoryValue = 0
 #create method InventoryValue that returns UnitsOnHand times Price
     def InventoryValue(self):
-        InventoryValue = self.UnitsOnHand * self.Price
-        return InventoryValue                           #FIGURE OUT HOW TO ADD THIS TO THE LIST
+        InventoryValue = UnitsOnHand * Price
+        return InventoryValue
 #read 10.02 Inventory.txt file & create three objects, one per item
 fileTxt = open("10.02 Inventory.txt", "r")
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
 item1 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
+#FIGURE OUT HOW TO CALL INVENTORYVALUE
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
@@ -28,12 +30,12 @@ item2 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
 item3 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
-#display report w/ Description, UnitsOnHand, Price, and InventoryValue
-print("{:<20}{:<20}{:<20}".format("Description", "Units On Hand", "Price"))
 
-print("{:<20}{:<20}{:<15}".format(item1.Description, item1.UnitsOnHand, item1.Price))
-print("{:<20}{:<20}{:<15}".format(item2.Description, item2.UnitsOnHand, item2.Price))
-print("{:<20}{:<20}{:<15}".format(item3.Description, item3.UnitsOnHand, item3.Price))
+print("{:20s}{:20s}{:20s}{:20s}".format("Description", "Units On Hand", "Price", "Inventory Value"))
+#display report w/ Description, UnitsOnHand, Price, and InventoryValue
+print("{:20s}{:20s}{:15s}".format(item1.Description, item1.UnitsOnHand, item1.Price))
+print("{:20s}{:20s}{:15s}".format(item2.Description, item2.UnitsOnHand, item2.Price))
+print("{:20s}{:20s}{:15s}".format(item3.Description, item3.UnitsOnHand, item3.Price))
 
 #EXAMPLE OUTPUT:
 
