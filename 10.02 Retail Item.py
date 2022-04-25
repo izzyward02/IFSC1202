@@ -13,15 +13,13 @@ class RetailItem():
         self.InventoryValue = 0
 #create method InventoryValue that returns UnitsOnHand times Price
     def InventoryValue(self):
-        InventoryValue = UnitsOnHand * Price
-        return InventoryValue
+        return UnitsOnHand * Price
 #read 10.02 Inventory.txt file & create three objects, one per item
 fileTxt = open("10.02 Inventory.txt", "r")
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
 item1 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
-#FIGURE OUT HOW TO CALL INVENTORYVALUE
 
 fileRead = fileTxt.readline()
 itemElement = fileRead.split(",")
