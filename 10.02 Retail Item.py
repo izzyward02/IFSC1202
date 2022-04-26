@@ -13,31 +13,21 @@ class RetailItem():
 #create method InventoryValue that returns UnitsOnHand times Price
     def InventoryValue(self):
         InventoryValue = self.UnitsOnHand * self.Price
+        InventoryValue = round(InventoryValue, 2)
         return InventoryValue
 #read 10.02 Inventory.txt file & create three objects, one per item
 fileTxt = open("10.02 Inventory.txt", "r")
-
+itemList = []
 fileRead = fileTxt.readline()
-itemElement = fileRead.split(",")
-item1 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
 
-fileRead = fileTxt.readline()
-itemElement = fileRead.split(",")
-item2 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
+while fileRead != "":
+    Description, UnitsOnHand, Price = fileRead.split(",")
+    itemData = RetailItem(str(Description), int(UnitsOnHand), float(Price))
+    itemList.append(itemData)
+    fileRead = fileTxt.readline()
 
-fileRead = fileTxt.readline()
-itemElement = fileRead.split(",")
-item3 = RetailItem(itemElement[0], itemElement[1], itemElement[2])
-
-print("{:20s}{:20s}{:20s}{:20s}".format("Description", "Units On Hand", "Price", "Inventory Value"))
+print("{:<20}{:<20}{:<20}{:<20}".format("Description", "Units On Hand", "Price", "Inventory Value"))
 #display report w/ Description, UnitsOnHand, Price, and InventoryValue
-print("{:20s}{:20s}{:15s}{:15s}".format(item1.Description, item1.UnitsOnHand, item1.Price, item1.InventoryValue()))
-print("{:20s}{:20s}{:15s}".format(item2.Description, item2.UnitsOnHand, item2.Price))
-print("{:20s}{:20s}{:15s}".format(item3.Description, item3.UnitsOnHand, item3.Price))
-
-#EXAMPLE OUTPUT:
-
-#Description       Units On Hand               Price     Inventory Value
-#     Jacket                  12                9.95              119.40
-#      Jeans                  40               34.95             1398.00
-#      Shirt                  20               24.95              499.00
+for i in range(len(itemList)):
+    print("{:<20}{:<20}{:<20}{:<20}".format(itemList[i].Description, itemList[i].UnitsOnHand, itemList[i].Price, itemList[i].InventoryValue()))
+print()
