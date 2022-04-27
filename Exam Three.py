@@ -47,15 +47,5 @@ print("\n")
 print("{:<20}{:<20}{:<20}{:<20}{:<20}".format("Address", "Sq Ft", "SqFt Cost", "Price", "Payment"))
 
 for a in range(len(HouseList)):
-	 print("{:<20}{:<20}{:<20}{:<20}".format(HouseList[a].Address, HouseList[a].SqFt, HouseList[a].CostPerSqFt(), HouseList[a].Price, HouseList[a].Payment))
+	 print("{:<20}{:<20}{:<20}{:<20}{:<20}".format(HouseList[a].Address, HouseList[a].SqFt, HouseList[a].CostPerSqFt(), HouseList[a].Price, HouseList[a].Payment()))
 print()
-
-#EXPECTED OUTPUT:
-
-#Enter Interest Rate:  6
-#Enter Years for Mortgage: 15
-
-#      Address        Sq Ft      SqFt Cost        Price        Payment
-#    101 Main          1500          66.67       100000         843.86
-#    432 Maple         1750          62.86       110000         928.24
-#    8000 Chenal       3200          87.50       280000        2362.80
