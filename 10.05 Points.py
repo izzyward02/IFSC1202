@@ -48,7 +48,7 @@ with fileTxt as data:
         if a != "\n":
             r = a.split(",")
             plot.append(r)
-    print(f"{"Point A":^17}{"Point B":^17}{"Distance":^17}{"Midpoint":^17}{"Angle":^17}")
+    print(f'{"Point A":^20}{"Point B":^20}{"Distance":^20}{"Midpoint":^20}{"Angle":^20}')
     print()
 #   as each line reads, create two Point objs & reuse them with next datapoint
 #   first two values are (x,y) for Point A and second two values are (x,y) for Point B
@@ -56,7 +56,7 @@ with fileTxt as data:
         pA = Point(float(plot[a][0]), float(plot[a][1]))
         pB = Point(float(plot[a][2]), float(plot[a][3]))
 #read each datapoint pair and display datapoint values, distance, midpoint, and XAngle
-        print(f"{pA.ToString():17}{pB.ToString():17}{pA.Distance(pB):17.7f}{pA.MidPoint(pB):17}{pA.XAngle(pB):<17.7f}")
+        print(f'{pA.ToString():^20}{pB.ToString():^20}{pA.Distance(pB):>20}{pA.MidPoint(pB):>20}{pA.XAngle(pB):>20}')
 print()
 
 #EXPECTED OUTPUT:
