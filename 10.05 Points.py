@@ -58,12 +58,3 @@ with fileTxt as data:
 #read each datapoint pair and display datapoint values, distance, midpoint, and XAngle
         print(f'{pA.ToString():^20}{pB.ToString():^20}{pA.Distance(pB):>20}{pA.MidPoint(pB):>20}{pA.XAngle(pB):>20}')
 print()
-
-#EXPECTED OUTPUT:
-
-#            Point A              Point B             Distance             Midpoint                Angle
-#     ---------------      ---------------      ---------------      ---------------      --------------- 
-#          (0.0, 0.0)           (1.0, 1.0)            1.4142136           (0.5, 0.5)           45.0000000
-#          (0.0, 0.0)           (4.0, 3.0)            5.0000000           (2.0, 1.5)           36.8698976
-#        (-1.0, -1.0)           (3.0, 2.0)            5.0000000           (1.0, 0.5)           36.8698976
-#          (0.0, 0.0)     (1.7320508, 1.0)            2.0000000     (0.8660254, 0.5)           30.0000001

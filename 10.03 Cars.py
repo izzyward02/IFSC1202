@@ -48,14 +48,3 @@ for a in range(1, len(carList)):
         print("{:<20}{:<20}".format(carList[a][b], car1.Brake(speedData)))
 #print change of speed value and current speed
 print()
-
-#EXAMPLE OUTPUT:
-
-#Make: Jeep
-#Year: 2014
-
-#Change    Speed
-#    60       60
-#    -5       55
-#   -10       45
-#     3       48
