@@ -44,7 +44,7 @@ with open("11.02 Employees.txt") as gData:
 #   read 11.02 Hours.txt & update hours worked for appropriate employee
     eList = []
     for a in range(len(genList)):
-        newE = Employee(genList[a][0], genList[a][1], genList[a][2], genList[a][3])  #MissingArgument but when added IndexOutOfRange
+        newE = Employee(genList[a][0], genList[a][1], genList[a][2], genList[a][3])
         eList.append(newE)
     with open("11.02 Hours.txt") as new:
         newH = []
@@ -59,11 +59,3 @@ with open("11.02 Employees.txt") as gData:
                 eList[a].HoursWorked = int(newH[ind][1])
 #   print results
             print("{:15}{:15}{:15}{:15}{:15}{:15}".format(eList[a].FName, eList[a].LName, eList[a].IDNum, eList[a].HoursWorked, eList[a].Wage, eList[a].WeeklyPay()))
-
-#EXPECTED OUTPUT:
-
-#First    Last      ID       Hours    Hourly   Weekly
-#Name     Name      Number   Worked   Wage     Pay
-#Susan    Meyers    47899    41.00    15.64    649.06
-#Mark     Jones     39119    37.00    14.46    535.02
-#Joy      Rogers    41774    43.00    15.28    679.96

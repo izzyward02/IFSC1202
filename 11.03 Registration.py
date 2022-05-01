@@ -132,7 +132,7 @@ with open("11.03 Registration.txt") as gData:
 #   append new course object to courseList in selected student courseList w/ .append() 
 #       HINT: mystudentList.StudentList[studentIndex].courseList.append(myCourse)
     for a in range(len(genList)):
-        if student1.find_course(genList[a][0]) != -1:
+        if student1.find_course(CourseList[a][0]) != -1:
             if myCourses.find_course(genList[a][1], genList[a][2]):
                 student1.sList[student1.find_student(genList[a][0])].reg(myCourses.CourseList[myCourses.find_course(genList[a][1], genList[a][2])])
 #print student registration w/ print_student_list
