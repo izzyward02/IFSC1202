@@ -29,22 +29,20 @@ class Sketch():
         self.yPos = 0
         self.direction = "U"
         self.pen = "U"
-        self.canvas = [[" " for a in range(self.size)]for b in range(self.size)]
+        self.canvas = []
 #   initialize methods... 
 #       printSketch (no arguments)
     def printSketch(self):
 #           prints canvas line by line
 #           HINT: print canvas from last line to zeroth line w/ 1-step (puts origin at bottom)
-        border = "+" + self.size * "-" + "+"
-        print(border)
+        print("+" + ("-" * int(self.size)) + "+")
 #           print current xpos, ypos, and direction under canvas
-        for a in range(self.size):
-            c = self.size - a - 1
+        for a in range(len(self.canvas)):
             print("|", end = "")
-            for b in range(self.size):
-                print(self.canvas[c][b], end = "")
+            for b in range(len(self.canvas[a])):
+                print(self.canvas[a][b], end = "")
             print("|")
-        print(border)
+        print("+" + ("-" * int(self.size)) + "+")
         print("X = " + str(self.xPos) + "  " + "Y = " + str(self.yPos) + "  " + "Direction = " + self.direction)
 #       penUp (no arguments)
     def penUp(self):
@@ -81,83 +79,65 @@ class Sketch():
 #           moves turtle from current xpos, ypos along current direction
         prevXPos = self.xPos
         prevYPos = self.yPos
+
+        if self.direction == "R":
+            newYPos = int(self.yPos) + distance
+            if newYPos >= int(self.size):
+                newYPos = int(self.size) - 1
+            if self.pen == "D":
+                for a in range(newYPos - self.yPos):
+                    self.canvas[prevXPos][self.yPos + a] = "*"
+            newXPos = self.xPos
+        elif self.direction == "L":
+            newYPos = int(self.yPos) - distance
+            if newYPos < 0:
+                newYPos  = 0
+            if self.pen == "D":
+                for a in range(self.yPos - newYPos):
+                    self.canvas[prevXPos][self.yPos - a] = "*"
+                    self.yPos -= 1
+            newXPos = self.xPos
+        elif self.direction == "U":
+            newXPos = int(self.xPos) + distance
+            if newXPos >= int(self.size):
+                newXPos = int(self.size) - 1
+            if self.pen == "D":
+                for a in range(newXPos - self.xPos):
+                    self.canvas[self.xPos + a][prevYPos] = "*"
+            newYPos = self.yPos
+        elif self.direction == "D":
+            newXPos = int(self.xPos) - distance
+            if newXPos < 0:
+                newXPos = 0
+            if self.pen == "D":
+                for a in range(newXPos - self.xPos):
+                    self.canvas[self.xPos - a][prevYPos] = "*"
+            newYPos = self.yPos
+        self.xPos = newXPos
+        self.yPos = newYPos
 #           if pen is D, put * along the path
 #           HINT: different code snippet for each direction; if turtle reaches canvas border, stop
-        if self.direction == "U":
-            if self.xPos + distance < self.size:
-                self.xPos += distance
-            else:
-                self.xPos = self.size
-        if self.direction == "D":
-            if self.xPos - distance >= 0:
-                self.xPos -= distance
-            else:
-                self.xPos = 0
-        if self.direction == "R":
-            if self.yPos + distance < self.size:
-                self.yPos += distance
-            else:
-                self.xPos = self.size
-        if self.direction == "L":
-            if self.yPos - distance >= 0:
-                self.yPos -= distance
-            else:
-                self.yPos = 0
-        
-        xMin = min(prevXPos, self.xPos)
-        xMax = max(prevXPos, self.xPos)
-        yMin = min(prevYPos, self.yPos)
-        yMax = max(prevYPos, self.yPos)
-
-        if self.pen == "D":
-            for a in range(yMin, yMax - 1):
-                for b in range(xMin, xMax + 1):
-                    self.canvas[b][a] = "*"
-fileTxt = open("Cshape.txt", "r")
-fileRead = fileTxt.readlines()
-
-size = int(fileRead[0])
-drawing = Sketch(size)
-for a in range(1, len(fileRead)):
-    if fileRead[a].find(",") == -1:
-        turtleMove = fileRead[a].strip()
-        if turtleMove == "1":
-            drawing.penUp()
-        if turtleMove == "2":
-            drawing.penDown()
-        if turtleMove == "3":
-            drawing.turnRight()
-        if turtleMove == "4":
-            drawing.turnLeft()
-        if turtleMove == "6":
-            drawing.printSketch()
-    else:
-        turtleMove, distance = fileRead[a].strip().split(",")
-        drawing.move(int(distance))
-exit()
-
-#EXPECTED OUTPUT:
-
-#+--------------------+
-#|                    |
-#|                    |
-#|                    |
-#|                    |
-#|     ***********    |
-#|     *         *    |
-#|     *  ********    |
-#|     *  *           |
-#|     *  *           |
-#|     *  *           |
-#|     *  *           |
-#|     *  *           |
-#|     *  *           |
-#|     *  ********    |
-#|     *         *    |
-#|     ***********    |
-#|                    |
-#|                    |
-#|                    |
-#|                    |
-#+--------------------+
-#X = 16  Y = 5  Direction = U
+with open("Cshape.txt") as commands:
+    drawList = []
+    for command in commands:
+        if command != "\n":
+            line = command.split(",")
+            for a in range(len(line)):
+                line[a] = line[a].strip()
+            drawList.append(line)
+    cSketch = Sketch(drawList[0][0])
+    cSketch.canvas = int(cSketch.size) * [int(cSketch.size) * [" "]]
+    for a in range(1, len(drawList)):
+        if int(drawList[a][0]) == 1:
+            cSketch.penUp()
+        elif int(drawList[a][0]) == 2:
+            cSketch.penDown()
+        elif int(drawList[a][0]) == 3:
+            cSketch.turnRight()
+        elif int(drawList[a][0]) == 4:
+            cSketch.turnLeft()
+        elif int(drawList[a][0]) == 5:
+            cSketch.move(int(drawList[a][1]))
+        elif int(drawList[a][0]) == 6:
+            cSketch.printSketch()
+print()
