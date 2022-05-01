@@ -134,6 +134,7 @@ for a in range(1, len(fileRead)):
     else:
         turtleMove, distance = fileRead[a].strip().split(",")
         drawing.move(int(distance))
+exit()
 
 #EXPECTED OUTPUT:
 
